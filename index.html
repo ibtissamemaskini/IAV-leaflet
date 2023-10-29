@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="Leaflet.LinearMeasurement/Leaflet.LinearMeasurement.css" />
+    <script src="Leaflet.LinearMeasurement/Leaflet.LinearMeasurement.js"></script>
+    <title>Leaflet TP- MASKINI IBTISSAME</title>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    
+</head>
+
+<body>
+    <div id="map" style="height: 590px; width: 1250px;"></div>
+    <script>
+        var map = L.map('map').setView([33.9774, -6.8650], 16);
+
+        var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+        googleSat.addTo(map);
+
+        var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+
+        var polygon1 = L.polygon([
+        [33.98157, -6.863934],
+            [33.980841, -6.862721],
+            [33.980654, -6.860747],
+            [33.979226, -6.86189],
+            [33.979666, -6.862598],
+            [33.976139, -6.865924],
+            [33.974666, -6.863784],
+            [33.970876, -6.867453],
+            [33.972486, -6.869953],
+            [33.973341, -6.869465],
+            [33.974106, -6.869717],
+            [33.9746, -6.870489]
+        ]).addTo(map);
+
+
+        var polygon2 = L.polygon([
+            [33.976094, -6.866719],
+            [33.975985, -6.866549],
+            [33.975474, -6.867024],
+            [33.975329, -6.866806],
+            [33.975227, -6.866884],
+            [33.97534, -6.867075],
+        [33.974903, -6.867457],
+        [33.97502, -6.867627],
+        [33.975357, -6.867405],
+        [33.975455, -6.867566],
+        [33.975267, -6.867665],
+        [33.975338, -6.867761],
+        [33.975403, -6.867718],
+        [33.975515, -6.867879],
+        [33.975744, -6.867629],
+        [33.975838, -6.86778],
+        [33.976026, -6.867584],
+        [33.97575, -6.86716]
+        ]).addTo(map);
+        polygon2.bindPopup("<b>VETO</b><br>").openPopup();
+
+       
+        var polygon3 = L.polygon([
+            [33.975271, -6.86608],
+            [33.975047, -6.865656],
+            [33.974755, -6.865924],
+            [33.975011, -6.866329]
+        ]).addTo(map);
+        polygon3.bindPopup("<b>IAA</b><br>").openPopup();
+
+        var polygon4 = L.polygon([
+            [33.977418, -6.865822],
+            [33.977298, -6.865679],
+            [33.977176, -6.865853],
+            [33.97731, -6.865987]
+        ]).addTo(map);
+        polygon4.bindPopup("<b>GR</b><br>").openPopup();
+
+        var polygon5 = L.polygon([
+            [33.979555, -6.863381],
+            [33.979326, -6.863041],
+            [33.978677, -6.863676],
+            [33.978896, -6.864021]
+        ]).addTo(map);
+        polygon5.bindPopup("<b>AGRO</b><br>").openPopup();
+
+        var polygon6 = L.polygon([
+            [33.980819, -6.862778],
+            [33.980609, -6.860771],
+            [33.979255, -6.861909],
+            [33.979718, -6.862633],
+            [33.980093, -6.862381],
+            [33.980516, -6.863129]
+        ]).addTo(map);
+        polygon6.bindPopup("<b>Internat</b><br>").openPopup();
+
+        var polygon7 = L.polygon([
+            [33.974357, -6.868357],
+            [33.974041, -6.868657],
+            [33.974209, -6.868913],
+            [33.974524, -6.868609]
+        ]).addTo(map);
+        polygon7.bindPopup("<b>Clinique EQUINE</b><br>").openPopup();
+        
+        var polygon8 = L.polygon([
+            [33.973625, -6.868815],
+            [33.972873, -6.867085],
+            [33.971752, -6.868156],
+            [33.972744, -6.869642]
+        ]).addTo(map);
+        polygon8.bindPopup("<b>APESA</b><br>").openPopup();
+      
+        var polygon9 = L.polygon([
+            [33.974159, -6.865532],
+            [33.973679, -6.864803],
+            [33.971614, -6.866852],
+            [33.972126, -6.867689]
+        ]).addTo(map);
+        polygon9.bindPopup("<b>Terrains</b><br>").openPopup();
+        
+        var polygon10 = L.polygon([
+            [33.980649, -6.864095],
+            [33.980548, -6.863939],
+            [33.980385, -6.864108],
+            [33.980465, -6.864253]
+        ]).addTo(map);
+        polygon10.bindPopup("<b>Administration</b><br>").openPopup();
+        
+        var polygon11 = L.polygon([
+        [33.976673, -6.867142],
+            [33.976753, -6.867065],
+            [33.976726, -6.867013],
+            [33.976797, -6.866941],
+            [33.976744, -6.866849],
+            [33.976804, -6.866777],
+        [33.976681, -6.866577],
+        [33.976607, -6.866647],
+        [33.97655, -6.866578],
+        [33.976472, -6.866646],
+        [33.976527, -6.866738],
+        [33.97651, -6.866764],
+        [33.976412, -6.866627],
+        [33.976302, -6.866733],
+        [33.976396, -6.866875],
+        [33.97618, -6.867081],
+        [33.976318, -6.867289],
+        [33.976497, -6.867124],
+        [33.976588, -6.867018],
+        [33.976668, -6.867138],
+        [33.976673, -6.867142]
+        ]).addTo(map);
+        polygon11.bindPopup("<b>TOPO</b><br>").openPopup();
+       
+        var popup = L.popup()
+    .setLatLng([33.97819, -6.865962])
+    .setContent("IAV HASSAN II")
+    .openOn(map);
+
+        var polygonsLayerGroup = L.layerGroup([polygon1, polygon2, polygon3, polygon4, polygon5, polygon6, polygon7, polygon8, polygon9, polygon10, polygon11]).addTo(map);
+
+        var baseMaps = {
+            "GoogleMap": googleSat,
+            "OpenStreetMap": osm,
+        };
+
+        var overlayMaps = {
+            "IavMap": polygonsLayerGroup,
+        };
+
+
+        var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked at " + e.latlng.toString())
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+
+        map.addControl(new L.Control.LinearMeasurement({
+        unitSystem: 'metric',
+        color: '#FF0080',
+        type: 'line'
+    }));
+
+    L.Control.geocoder().addTo(map);
+
+    
+
+
+    const measurePolygonControl = L.control.measurePolygon();
+measurePolygonControl.addTo(map);
+
+
+    </script>
+</body>
+
+</html>
